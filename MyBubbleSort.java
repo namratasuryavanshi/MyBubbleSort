@@ -1,3 +1,7 @@
+// Author: Namrata Suryavanshi
+// Run at: http://ideone.com/1SmfYt
+
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -7,16 +11,26 @@ class MyBubbleSort
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
-		int[] A = {5,2,7,8,4,9,1,3,0,6};
-		for (int i: A){
+		int[] A = new int[10];
+		populateArray(A);
+
+		for(int i: A){
 			System.out.print(i + " ");
 		}
+		
 		System.out.println(" ");
 		MyBubbleSort mbs = new MyBubbleSort();
 		int[] B = mbs.bubbleSort(A);
 		for (int i: B){
 			System.out.print(i + " ");
 		}
+	}
+	
+	public static int[] populateArray(int[] list){
+		for (int i = 0; i < list.length; i++){
+			list[i] = (int)(Math.random()*10 + 5);
+		}
+		return list;
 	}
 	
 	public static int[] bubbleSort(int[] list) {
